@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+.warp {
+	
+}
+
+.background {
+	position: relative;
+	width: 600px;
+	height: 400px;
+	margin: 100px auto 0;
+	overflow: hidden;
+}
+
+.bg-img, .text {
+	position: absolute;
+}
+
+.bg-img {
+	width: inherit;
+	border-radius: 10px;
+	
+}
+
+.background:hover .bg-img {
+	filter: blur(8px);
+}
+
+.background:hover .text {
+	opacity: 1;
+}
+
+.text {
+	opacity: 0;
+	width: 370px;
+	height: 200px;
+	left: 18%;
+	top: 25%;
+	text-align: center;
+	line-height: 50px;
+	letter-spacing: 5px;
+	/*border-left: 3px solid #fff ;
+	border-right: 3px solid #fff ;*/
+}
+
+.bg-head {
+	font-size: 24px;
+	margin-top: 50px;
+	cursor: default;
+}
+
+.bg-word {
+	cursor: pointer;
+	font-size: 18px;
+}
+
+@media all {
+	.masked {
+		background: -webkit-linear-gradient(200deg, #0065ff, #8100ff 25%, #0065ff 50%, #6500ff 75%, #0067ff ); 
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-background-size: 200% 100%;
+		animation: colorChange 4s infinite linear;
+	}
+}
+
+@-webkit-keyframes colorChange {
+	0%{
+		background-position: 0 0;
+	}
+	100%{
+		background-position: -100% 0;
+	}
+}
+
+.text:before {
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+	transform: scale3d(0, 1, 1);
+	-webkit-transform: scale3d(0, 1, 1);
+}
+
+.text:after {
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff;
+	transform: scale3d(1, 0, 1);
+	-webkit-transform: scale3d(1, 0, 1);
+}
+
+.text:before, .text:after {
+	box-sizing: border-box;
+    content: '';
+    position: absolute;
+	top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.background:hover .text:before, .background:hover .text:after {
+	transform: scale3d(1, 1, 1);
+	-webkit-transform: scale3d(1, 1, 1);
+	transition: transform .5s;
+	-webkit-transition: -webkit-transform .5s;
+}
