@@ -4,10 +4,6 @@
 	font-family: "微软雅黑";
 }
 
-.warp {
-	
-}
-
 .background {
 	position: relative;
 	width: 600px;
@@ -23,15 +19,7 @@
 .bg-img {
 	width: inherit;
 	border-radius: 10px;
-	
-}
-
-.background:hover .bg-img {
-	filter: blur(8px);
-}
-
-.background:hover .text {
-	opacity: 1;
+	-webkit-transition: filter .5s linear .1s; 
 }
 
 .text {
@@ -43,8 +31,7 @@
 	text-align: center;
 	line-height: 50px;
 	letter-spacing: 5px;
-	/*border-left: 3px solid #fff ;
-	border-right: 3px solid #fff ;*/
+	-webkit-transition: opacity .5s linear .1s;
 }
 
 .bg-head {
@@ -56,6 +43,17 @@
 .bg-word {
 	cursor: pointer;
 	font-size: 18px;
+}
+
+/*animation*/
+/*模糊*/
+.background:hover .bg-img {
+	filter: blur(7px);
+}
+
+
+.background:hover .text {
+	opacity: 1;
 }
 
 @media all {
@@ -99,11 +97,11 @@
     left: 0;
     height: 100%;
     width: 100%;
+    transition: transform .5s linear .1s;
+	-webkit-transition: -webkit-transform .5s linear .1s;
 }
 
 .background:hover .text:before, .background:hover .text:after {
 	transform: scale3d(1, 1, 1);
 	-webkit-transform: scale3d(1, 1, 1);
-	transition: transform .5s;
-	-webkit-transition: -webkit-transform .5s;
 }
